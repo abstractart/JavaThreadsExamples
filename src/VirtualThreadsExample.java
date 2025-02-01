@@ -4,10 +4,6 @@ public class VirtualThreadsExample {
         System.setProperty("jdk.virtualThreadScheduler.parallelism", "1");
         System.setProperty("jdk.virtualThreadScheduler.maxPoolSize", "1");
         System.setProperty("jdk.virtualThreadScheduler.minRunnable", "1");
-        System.out.println("Параметры виртуальных потоков:");
-        System.out.println("jdk.virtualThreadScheduler.parallelism: " + System.getProperty("jdk.virtualThreadScheduler.parallelism"));
-        System.out.println("jdk.virtualThreadScheduler.maxPoolSize: " + System.getProperty("jdk.virtualThreadScheduler.maxPoolSize"));
-        System.out.println("jdk.virtualThreadScheduler.minRunnable: " + System.getProperty("jdk.virtualThreadScheduler.minRunnable"));
 
         // Задача 1: Выполнение с паузой
         Thread task1 = Thread.ofVirtual().start(() -> {
@@ -24,8 +20,8 @@ public class VirtualThreadsExample {
         Thread task2 = Thread.ofVirtual().start(() -> {
             System.out.println("Задача 2: Начало бесконечного цикла.");
             while (true) {
-                // System.out.println("Задача 2: Работаем...");
-                // Thread.sleep(1000);
+                System.out.println("Задача 2: Работаем...");
+                //Thread.sleep(1000);
             }
         });
 
